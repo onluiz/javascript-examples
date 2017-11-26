@@ -5,7 +5,7 @@ const logApi = require('../log-api')
 
 describe('Log', () => {
 
-    describe('#findAll', () => {
+    xdescribe('#findAll', () => {
         it('should get all logs without errors', async () => {
             await logApi.findAll()
         })
@@ -22,7 +22,7 @@ describe('Log', () => {
     })
 
     describe('#save', () => {
-        it('should save a log', async () => {
+        xit('should save a log', async () => {
             let log = {
                 description: 'saving a log from mocha tests',
                 date: new Date(),
@@ -30,6 +30,19 @@ describe('Log', () => {
             }
             let status = await logApi.save(log)
             assert.equal(status, '200')
+        })
+        xit('should save lots of logs', async () => {
+            let log
+            let status
+            for(let i = 0; i < 10000; i++) {
+                log = {
+                    description: (i + ' ' + new Date() + ' ramdom log generator ' + i),
+                    date: new Date(),
+                    idUser: 1
+                }
+                status = await logApi.save(log)
+                console.log(i + '   ' + status)
+            }
         })
     })
 
