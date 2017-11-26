@@ -21,7 +21,7 @@ describe('Log', () => {
         })
     })
 
-    describe('#save', () => {
+    xdescribe('#save', () => {
         xit('should save a log', async () => {
             let log = {
                 description: 'saving a log from mocha tests',
@@ -43,6 +43,13 @@ describe('Log', () => {
                 status = await logApi.save(log)
                 console.log(i + '   ' + status)
             }
+        })
+    })
+
+    describe('#paginated', () => {
+        it('should get paginated logs', async () => {
+            let logResult = await logApi.paginated(2, 1)
+            assert.equal(logResult.logs.length, 2)
         })
     })
 
