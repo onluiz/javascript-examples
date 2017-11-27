@@ -1,9 +1,9 @@
 require('dotenv').load()
 const assert = require('assert');
-const api = require('../api')
-const logApi = require('../log-api')
+const api = require('../api/api')
+const logApi = require('../api/log-api')
 
-describe('Log', () => {
+xdescribe('Log', () => {
 
     xdescribe('#findAll', () => {
         it('should get all logs without errors', async () => {
