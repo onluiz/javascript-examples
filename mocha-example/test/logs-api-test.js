@@ -46,7 +46,7 @@ describe('Log', () => {
         })
     })
 
-    describe('#paginated', () => {
+    xdescribe('#paginated', () => {
         it('should get paginated logs', async () => {
             let logResult = await logApi.paginated(2, 1)
             assert.equal(logResult.logs.length, 2)
